@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bank branches</h1>
+
+<div id="bank_branches">
+  <% @bank_branches.each do |bank_branch| %>
+    <%= render bank_branch %>
+    <p>
+      <%= link_to "Show this bank branch", bank_branch %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New bank branch", new_bank_branch_path %>

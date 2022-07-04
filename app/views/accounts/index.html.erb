@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Accounts</h1>
+
+<div id="accounts">
+  <% @accounts.each do |account| %>
+    <%
+=begin%>
+ <%= render account %> 
+<%
+=end%>
+    <p><b>Branch Name : </b> <%= BankBranch.find_by(id: account.bank_branch_id).branchname %></p>
+    <p><b>IFSC Code : </b> <%= BankBranch.find_by(id: account.bank_branch_id).ifsc %></p>
+    <p><b>Name : </b><%= Customer.find_by(id: account.customer_id).name%></p>
+    <p><b>Account Type : </b><%= account.account_type%></p> 
+    <p><b> Balance : </b> <%= account.balance%> </p>
+    <p>
+      <%= link_to "Show this account", account %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New account", new_account_path %>

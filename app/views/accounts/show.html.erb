@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Account Details</h1> 
+<p><b>Branch Name : </b> <%= BankBranch.find_by(id: @account.bank_branch_id).branchname %></p>
+<p><b>IFSC Code : </b> <%= BankBranch.find_by(id: @account.bank_branch_id).ifsc %></p>
+<p><b>Name : </b><%= Customer.find_by(id: @account.customer_id).name%></p>
+<p><b>Account Type : </b><%= @account.account_type%></p> 
+<p><b> Balance : </b> <%= @account.balance%> </p>
+
+
+<div>
+  <%= link_to "Edit this account", edit_account_path(@account) %> |
+  <%= link_to "Back to accounts", accounts_path %>
+
+  <%= button_to "Destroy this account", @account, method: :delete , form: { data: { turbo_confirm: 'Are you sure?' } }%>
+</div>

@@ -1,0 +1,32 @@
+<%= form_with(model: bank_branch) do |form| %>
+  <% if bank_branch.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bank_branch.errors.count, "error") %> prohibited this bank_branch from being saved:</h2>
+
+      <ul>
+        <% bank_branch.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :ifsc, style: "display: block" %>
+    <%= form.text_field :ifsc %>
+  </div>
+
+  <div>
+    <%= form.label :branchname, style: "display: block" %>
+    <%= form.text_field :branchname %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
