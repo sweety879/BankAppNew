@@ -2,13 +2,47 @@
 
 <h1>Customers</h1>
 
-<div id="customers">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Pan Card</th>
+      <th scope="col">Aadhaar </th>
+      <th scope="col">Mobile #</th>
+     <th scope="col"> Email</th>
+     <th scope="col">Address </th>
+    <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+    <tr>
+          <th scope="row"><%=customer.id%></th>
+          <td><%=customer.name%></td>
+        <td><%=customer.pancard%></td>
+        <td><%=customer.aadhaar%></td>
+        <td><%=customer.mobile%></td>
+        <td><%=customer.email%></td>
+        <td><%=customer.address%></td>
+        <td><%= link_to "Show", customer %></td>
+    </tr>
+    <% end %>   
+  </tbody>
+</table>
+
+
+<%
+=begin%>
+ <div id="customers">
   <% @customers.each do |customer| %>
     <%= render customer %>
     <p>
       <%= link_to "Show this customer", customer %>
     </p>
   <% end %>
-</div>
+</div> 
+<%
+=end%>
 
 <%= link_to "New customer", new_customer_path %>

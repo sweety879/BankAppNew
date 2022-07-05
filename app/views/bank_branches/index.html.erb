@@ -2,13 +2,29 @@
 
 <h1>Bank branches</h1>
 
-<div id="bank_branches">
-  <% @bank_branches.each do |bank_branch| %>
-    <%= render bank_branch %>
-    <p>
-      <%= link_to "Show this bank branch", bank_branch %>
-    </p>
-  <% end %>
-</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Branch Name</th>
+      <th scope="col">IFSC </th>
+      <th scope="col">Address </th>
+      <th scope="col">view </th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @bank_branches.each do |branch| %>
+    <tr>
+      <th scope="row"><%=branch.id%></th>
+      <td><%=branch.branchname%></td>
+      <td><%=branch.ifsc%></td>
+      <td><%=branch.address%></td>
+      <td><%= link_to "Show", branch %></td>
+    </tr>
+   <% end %>  
+    </tbody>
+</table>
 
 <%= link_to "New bank branch", new_bank_branch_path %>
