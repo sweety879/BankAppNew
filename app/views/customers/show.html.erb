@@ -2,7 +2,7 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @customer %>
-</div>
+
 <div>
   <%= link_to "Edit this customer", edit_customer_path(@customer) %> |
   <%= link_to "Back to customers", customers_path %>
@@ -18,7 +18,7 @@
       <strong><%= @customer.accounts.count %></strong> Accounts
     </h2>
       <div id="accounts">
-      <table class="table table-striped">
+      <table class="table table-striped" style="width:90%">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -50,3 +50,4 @@
     </div>
   </div>
 </section>
+</div>
