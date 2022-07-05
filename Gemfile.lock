@@ -1,4 +1,11 @@
 GEM
+  remote: https://rails-assets.org/
+  specs:
+    rails-assets-datatables (1.10.21)
+      rails-assets-jquery (>= 1.7.0)
+    rails-assets-jquery (3.6.0)
+
+GEM
   remote: https://rubygems.org/
   specs:
     actioncable (7.0.3)
@@ -222,6 +229,8 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3)
+  rails-assets-datatables!
+  rails-assets-jquery!
   selenium-webdriver
   sprockets-rails
   stimulus-rails
