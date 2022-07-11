@@ -1,0 +1,15 @@
+<%= @user.errors[:roles] %>
+<%= form_with(model: @user) do |form| %>
+  <%= form.collection_check_boxes :role_ids, Role.all, :id, :name %> 
+  <%= form.button :submit %>
+<% end %> 
+
+
+ <%
+=begin%>
+ <%=Role.all.each do |r|%>
+    <%= form.check_box :r ,r.id,r.name%> &nbsp:
+    <%=r.id%><br>
+<%end%>  
+<%
+=end%>

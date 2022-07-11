@@ -26,7 +26,7 @@
         <td><%=customer.mobile%></td>
         <td><%=customer.email%></td>
         <td><%=customer.address%></td>
-        <td><%= link_to "Show", customer %></td>
+        <td><%= link_to "Show", customer if policy(customer).edit? %></td>
     </tr>
     <% end %>   
   </tbody>
