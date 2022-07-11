@@ -5,4 +5,15 @@ class BankBranch < ApplicationRecord
 
     has_many :accounts,
     dependent: :destroy
+
+    def self.to_csv()
+        attributes = %w{id branchname ifsc address}
+        CSV.generate(headers: true) do |csv|
+            csv << attributes
+
+            all.each do |contact|
+                csv << attributes.map{ |attr| contact.send(attr) }
+            end
+        end
+    end    
 end
