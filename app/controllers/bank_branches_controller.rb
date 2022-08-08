@@ -4,6 +4,10 @@ class BankBranchesController < ApplicationController
   # GET /bank_branches or /bank_branches.json
   def index
     @bank_branches = BankBranch.all
+    respond_to do |format|
+      format.html
+      format.csv {send_data @bank_branches.to_csv}
+    end
   end
 
   # GET /bank_branches/1 or /bank_branches/1.json

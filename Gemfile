@@ -71,5 +71,10 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'rails-assets-jquery', source:'https://rails-assets.org' 
-gem 'rails-assets-datatables', source: 'https://rails-assets.org'
+# gem 'rails-assets-jquery', source:'https://rails-assets.org' 
+# gem 'rails-assets-datatables', source: 'https://rails-assets.org'
+
+gem "devise"
+gem "rolify"
+gem "pundit"
+gem "csv"
